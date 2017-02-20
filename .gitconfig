@@ -1,0 +1,25 @@
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[user]
+	name = Jake Rossi
+	email = jakerossi24@gmail.com
+[color]
+	ui = auto
+[core]
+	excludesfile = /home/vagrant/.gitignore
+	editor = vim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[push]
+	default = current
+[alias]
+	st = status
+  lt = log --graph --oneline --decorate --all
+	co = checkout
+	graph = log --graph --pretty=format:\"%C(yellow)%h%Cblue%d%C(reset) %s %C(white) %an, %ar%C(reset)\"
